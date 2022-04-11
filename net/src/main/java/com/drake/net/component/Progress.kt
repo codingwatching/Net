@@ -74,6 +74,7 @@ data class Progress(
 
     /**
      * 请求或者响应的进度, 值范围在0-100
+     * 如果服务器返回的响应体没有指定Content-Length, 则无法计算进度, 始终返回0
      */
     fun progress(): Int {
         return when {
